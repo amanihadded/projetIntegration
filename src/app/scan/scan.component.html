@@ -1,0 +1,8 @@
+<div>
+    <div id="scanner-container" style="width: 640px; height: 480px;"></div>
+    <div *ngIf="scannedResult">
+      <label>Résultat du scan:</label>
+      <input type="text" [value]="scannedResult" readonly />
+    </div>
+  </div>
+  
