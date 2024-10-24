@@ -1,0 +1,54 @@
+<div class="container1">
+    <div class="header-container">
+        <button class="header-back-button" (click)="navigateBack()">
+          <fa-icon [icon]="faArrowLeft"></fa-icon> Back
+        </button>
+        <input class="search-form-input" type="text" placeholder="Search brands" />
+        <button class="header-search-button">
+          <fa-icon [icon]="faSearch"></fa-icon> Search
+        </button>
+        <button class="header-share-button" (click)="toggleShareContainer()">
+          <fa-icon [icon]="faShare"></fa-icon> Share
+        </button>
+      </div>
+      
+  
+    <div class="social-media">
+      <p style="text-align: center;padding: 10px;">Support our work by following us:</p>
+      <div class="social-icons">
+        <!-- Ajouter les icônes des réseaux sociaux ici -->
+      </div>
+    </div>
+  
+    <div class="icons-grid">
+      <div *ngFor="let sector of sectors" class="icon-item" (click)="goToCategory(sector.label)">
+        <img [src]="sector.image" [alt]="sector.label" />
+        <p>{{ sector.label }}</p>
+      </div>
+    </div>
+  
+    <div *ngIf="showShareContainer" class="modal-overlay">
+      <div class="share-container">
+        <input
+          type="text"
+          value="https://boycott.thewitness.news/categories/car"
+          readonly
+          class="share-link"
+        />
+        <input
+          type="text"
+          placeholder="Rechercher des personnes ou des e-mails"
+          class="share-input"
+        />
+        <div class="share-options">
+          <button>Outlook</button>
+          <button>WhatsApp</button>
+          <button>Facebook</button>
+          <button>Mobile connecté</button>
+          <button>OneNote</button>
+        </div>
+        <button class="close-button" (click)="toggleShareContainer()">Close</button>
+      </div>
+    </div>
+  </div>
+  
