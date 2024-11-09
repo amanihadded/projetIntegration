@@ -1,0 +1,30 @@
+<app-side-bar></app-side-bar>
+<div class="main-content">
+    <app-nav-bar></app-nav-bar>
+    <div class="product-list">
+        <h2>Products Grid</h2>
+        <div class="products">
+          <div *ngFor="let product of products" class="product-card">
+            <img src="https://via.placeholder.com/150" alt="{{ product.name }}" />
+            <h3>{{ product.name }}</h3>
+            <h4>BarCode: {{ product.barcode }}</h4>
+            <h4>Category: {{ product.category }}</h4>
+            <p>
+              {{ showFullDescription[product.id] ? product.info : (product.info | slice:0:100) }}...
+              <span class="read-more" (click)="toggleDescription(product.id)">
+                {{ showFullDescription[product.id] ? 'Show less' : 'Read more' }}
+              </span>
+            </p>
+            <div class="alternative-products">
+              <h3>Alternative Products: {{ product.alternative }}</h3>
+            </div>
+            <div class="actions">
+              <button (click)="handleEditClick(product)">Edit</button>
+              <button (click)="handleDeleteClick(product.id)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+</div>

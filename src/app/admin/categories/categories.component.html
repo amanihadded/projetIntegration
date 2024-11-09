@@ -1,0 +1,16 @@
+<app-side-bar></app-side-bar>
+<div class="main-content">
+    <app-nav-bar></app-nav-bar>
+    <div class="category-list">
+        <h2>Category List</h2>
+        <div class="categories">
+          <div *ngFor="let category of categories" class="category-card">
+            <img [src]="category.image" [alt]="category.name" class="category-image" />
+            <h3>{{ category.name }}</h3>
+            <p>{{ category.description }}</p>
+          </div>
+          
+        </div>
+      </div>
+      
+</div>

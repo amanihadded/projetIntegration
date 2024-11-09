@@ -1,0 +1,32 @@
+<app-side-bar></app-side-bar>
+<div class="main-content">
+    <app-nav-bar></app-nav-bar>
+    <div class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review-columns">
+          <div class="review-column">
+            <h3>Boycott</h3>
+            <div class="review-list">
+              <div *ngFor="let review of boycottReviews" class="review-card">
+                <p><strong>Brand Name:</strong> {{ review.brand }}</p>
+                <p><strong>Proof URL:</strong> <a [href]="review.proofUrl" target="_blank" rel="noopener noreferrer">{{ review.proofUrl }}</a></p>
+                <p><strong>Reason:</strong> {{ review.reason }}</p>
+                <p class="date">{{ review.date }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="review-column">
+            <h3>Alternative</h3>
+            <div class="review-list">
+              <div *ngFor="let review of alternativeReviews" class="review-card">
+                <p><strong>Brand Name:</strong> {{ review.brand }}</p>
+                <p><strong>Proof URL:</strong> <a [href]="review.proofUrl" target="_blank" rel="noopener noreferrer">{{ review.proofUrl }}</a></p>
+                <p><strong>Alternative of:</strong> {{ review.alternativeOf }}</p>
+                <p class="date">{{ review.date }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>

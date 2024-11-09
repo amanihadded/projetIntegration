@@ -1,0 +1,82 @@
+<app-side-bar></app-side-bar>
+
+<div class="main-content">
+<app-nav-bar></app-nav-bar>
+<div class="add-product">
+    <h2>Create Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Product Title:</label>
+        <input id="title" formControlName="title" type="text" />
+        <div *ngIf="productForm.get('title')!.touched && productForm.get('title')!.invalid">
+            <small class="error" *ngIf="productForm.get('title')!.hasError('required')">Product title is required.</small>
+            <small class="error" *ngIf="productForm.get('title')!.hasError('minlength')">Product title must be at least 3 characters long.</small>
+        </div>
+        
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input id="description" formControlName="description" type="text" />
+        <div *ngIf="productForm.get('description')!.touched && productForm.get('description')!.invalid">
+          <small class="error" *ngIf="productForm.get('description')!.hasError('required')">Description is required.</small>
+          <small class="error" *ngIf="productForm.get('description')!.hasError('minlength')">Description must be at least 10 characters long.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="brandImage">Brand Image:</label>
+        <input id="brandImage" formControlName="brandImage" type="file" (change)="onFileChange($event)" />
+        <div *ngIf="productForm.get('brandImage')!.touched && productForm.get('brandImage')!.invalid">
+          <small class="error" *ngIf="productForm.get('brandImage')!.hasError('required')">Brand image is required.</small>
+        </div>
+      </div>
+  
+      <div class="barcode-scanner">
+        <label for="barcode">Barcode:</label>
+        <input id="barcode" formControlName="barcode" type="text" />
+        <div *ngIf="productForm.get('barcode')!.touched && productForm.get('barcode')!.invalid">
+          <small class="error" *ngIf="productForm.get('barcode')!.hasError('pattern')">Invalid barcode. Must be 10-13 digits long.</small>
+        </div>
+        <button type="button" (click)="startScan()">Scan</button>
+      </div>
+  
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select id="category" formControlName="category">
+          <option value="">Select</option>
+          <option value="Drinks">Drinks</option>
+          <option value="Fashion">Fashion</option>
+          <option value="House-keeping">House-keeping</option>
+          <option value="Grocery">Grocery</option>
+          <option value="Cars">Cars</option>
+          <option value="Finance">Finance</option>
+          <option value="Luxury">Luxury</option>
+        </select>
+        <div *ngIf="productForm.get('category')!.touched && productForm.get('category')!.invalid">
+          <small class="error" *ngIf="productForm.get('category')!.hasError('required')">Category is required.</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="alternative">Alternative Product:</label>
+        <input id="alternative" formControlName="alternative" type="text" />
+        <div *ngIf="productForm.get('alternative')!.touched && productForm.get('alternative')!.invalid">
+          <small class="error" *ngIf="productForm.get('alternative')!.hasError('minlength')">Alternative product must be at least 3 characters long.</small>
+        </div>
+      </div>
+  
+      <div class="form-group checkbox-label">
+        <input id="publish" formControlName="publish" type="checkbox" />
+        <label for="publish">Publish on site</label>
+      </div>
+  
+      <button type="submit" [disabled]="productForm.invalid">Submit Product</button>
+    </form>
+  
+    <div *ngIf="scanning">
+      <div id="scanner-container" style="width: 250px; height: 250px;"></div>
+    </div>
+  </div>
+  
+</div>

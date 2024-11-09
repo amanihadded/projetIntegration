@@ -1,0 +1,46 @@
+<div class="search-all-container">
+    <div class="search-all-header">
+        <button class="search-all-back-button" (click)="goBack()"><fa-icon [icon]="faArrowLeft"></fa-icon> Back</button>
+        <input type="text" placeholder="Search brands" class="search-all-search-input" />
+        <button class="search-all-search-button"><fa-icon [icon]="faSearch"></fa-icon></button>
+        <button class="search-all-share-button" (click)="handleShare()"><fa-icon [icon]="faShare"></fa-icon> Share</button>
+    </div>
+    
+    <div class="search-all-social-media">
+        <p>Support our work by following us:</p>
+        <div class="search-all-social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61565480036426" target="_blank" rel="noopener noreferrer">
+                <fa-icon [icon]="faFacebook" class="search-all-icon search-all-facebook"></fa-icon>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <fa-icon [icon]="faInstagram" class="search-all-icon search-all-instagram"></fa-icon>
+            </a>
+        </div>
+    </div>
+    
+    <div class="search-all-brands-list">
+      <div *ngFor="let brand of currentBrands" id="brand-{{ brand.name }}" class="search-all-brand-item">
+        <div class="search-all-brand-front">
+          <img [src]="brand.image" [alt]="brand.name" class="search-all-brand-image" />
+          <span class="search-all-brand-name">{{ brand.name }}</span>
+          <p class="search-all-brand-description">{{ brand.description }}</p>
+          <button class="search-all-why-button" (click)="openModal(brand)">Why?</button>
+          <button class="search-all-alternative-button" (click)="handleAlternative(brand)">Alternative</button>
+        </div>
+        <div class="search-all-brand-back">
+          <button class="search-all-back-arrow" (click)="handleAlternative(brand)"><fa-icon [icon]="faArrowLeft"></fa-icon></button>
+          <p>Alternative Product Information for {{ brand.name }}</p>
+          <!-- Add alternative product information here -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="search-all-pagination">
+      <button (click)="paginate(currentPage - 1)" [disabled]="currentPage === 1">&lt;</button>
+      <button *ngFor="let number of pageNumbers" (click)="paginate(number)" [class.search-all-active]="number === currentPage">{{ number }}</button>
+      <button (click)="paginate(currentPage + 1)" [disabled]="currentPage === pageNumbers.length">&gt;</button>
+    </div>
+    
+    <app-modal *ngIf="showModal" [show]="showModal" (onClose)="closeModal()" [brand]="selectedBrand"></app-modal>
+  </div>
+  
