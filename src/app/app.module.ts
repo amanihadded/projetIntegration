@@ -22,6 +22,7 @@ import { ProductListComponent } from './admin/product-list/product-list.componen
 import { CategoriesComponent } from './admin/categories/categories.component';
 import { AddCategorieComponent } from './admin/add-categorie/add-categorie.component';
 import { ReviewComponent } from './admin/review/review.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { ReviewComponent } from './admin/review/review.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
 
 
   ],

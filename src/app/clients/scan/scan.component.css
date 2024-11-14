@@ -119,8 +119,6 @@
 }
 
 .product-info-card .product-image {
-    width: 100%;
-    height: auto;
     border-radius: 15px;
     margin-bottom: 15px;
 }

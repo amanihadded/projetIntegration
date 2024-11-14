@@ -6,7 +6,7 @@
     margin: 20px auto;
     width: 80%;
     max-width: 1200px;
-    margin-left: 165px;
+    margin-left: 200px;
 }
 
 .reviews h2 {
@@ -92,8 +92,8 @@ app-nav-bar {
     position: sticky;
     top: 0;
     z-index: 2;
-    width: 88%;
-    margin-left: 12%;
+    width: 86%;
+    margin-left: 13%;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

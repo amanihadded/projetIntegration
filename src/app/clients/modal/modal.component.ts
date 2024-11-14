@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -8,8 +8,10 @@ import { Component, Input } from '@angular/core';
 export class ModalComponent {
   @Input() show: boolean = false;
   @Input() brand: any;
-  
-  close() {
+  @Output() close = new EventEmitter<void>(); // Ajoutez cette ligne
+
+  closeModal() {
     this.show = false;
+    this.close.emit(); // Notifiez le parent que le modal est fermé
   }
 }
