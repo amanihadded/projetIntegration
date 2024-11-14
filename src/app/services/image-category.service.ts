@@ -9,7 +9,7 @@ import { ImageCategory } from '../models/imageCategory.model';
 export class ImageCategoryService {
 
   
-  private apiUrl = 'http://localhost:8087/api/boycott/imageCategory';
+  private apiUrl = 'http://localhost:8082/api/boycott/imageCategory';
 
   constructor(private http: HttpClient) { }
 

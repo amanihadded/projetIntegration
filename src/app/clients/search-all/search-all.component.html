@@ -18,7 +18,7 @@
         </div>
     </div>
     
-    <div class="search-all-brands-list"  *ngIf="filteredProduct.length > 0">
+    <div class="search-all-brands-list" *ngIf="filteredProduct.length > 0">
       <div *ngFor="let brand of currentProducts" id="product-{{ brand.name }}" class="search-all-brand-item">
         <div class="search-all-brand-front">
           <img *ngIf="imageMap.has(brand.id)" [src]="getImageUrl(imageMap.get(brand.id))" [alt]="brand.name" class="search-all-brand-image" />
@@ -34,8 +34,9 @@
       </div>
     </div>
     <div *ngIf="filteredProduct.length === 0" class="no-category" style="text-align: center;">
-      <p>Aucune Product trouvée.</p>
+      <p>No products found.</p>
     </div>
+    
     
     <div class="search-all-pagination">
       <button (click)="paginate(currentPage - 1)" [disabled]="currentPage === 1">&lt;</button>

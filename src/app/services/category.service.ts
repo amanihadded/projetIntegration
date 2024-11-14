@@ -8,7 +8,7 @@ import { Category } from '../models/category.model';
 })
 export class CategoryService {
 
-  private apiUrl = 'http://localhost:8087/api/boycott/categories';
+  private apiUrl = 'http://localhost:8082/api/boycott/categories';
 
   constructor(private http: HttpClient) { }
 

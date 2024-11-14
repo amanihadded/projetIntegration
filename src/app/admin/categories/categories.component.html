@@ -38,7 +38,7 @@
                     <div class="card mb-4 mb-xl-0">
                         <div class="card-header">Photo de profil</div>
                         <div class="card-body text-center">
-                          <img class="img-account-profile rounded-circle mb-2" [src]="selectedImage || 'default-image-url.jpg'" alt="Image de la catégorie">
+                          <img class="img-account-profile rounded-circle mb-2" [src]="selectedImage" height="50" width="50" alt="Image de la catégorie">
                           <br><input type="file" class="form-control" (change)="onFileSelected($event)"> <br><br>
                         </div>
                     </div>

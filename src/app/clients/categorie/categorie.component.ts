@@ -95,7 +95,7 @@ export class CategorieComponent implements OnInit {
   }
 
   goToCategory(category: Category): void {
-    this.router.navigate(['/product', category.id]);  // Fixing the path to match your route
+    this.router.navigate(['/products', category.id]);  // Fixing the path to match your route
 }
 
   

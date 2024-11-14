@@ -8,7 +8,7 @@ import { Product } from '../models/product.model';
 })
 export class ProductService {
 
-  private apiUrl = 'http://localhost:8087/api/boycott/products'; 
+  private apiUrl = 'http://localhost:8082/api/boycott/products'; 
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class ProductService {
   }
 
   getProductsByCategoryId(categoryId: number): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/category/${categoryId}`);
+    return this.http.get<Product[]>(`${this.apiUrl}/byCategory/${categoryId}`);
   }
 
   getProductById(id: number): Observable<Product> {

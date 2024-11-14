@@ -122,26 +122,26 @@ app-nav-bar {
   gap: 10px;
 }
 
-.brand-image {
-  width: 100px;
-  height: 100px;
-  margin-top: 20px;
-  object-fit: contain;
-}
+  .brand-image {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    object-fit: contain;
+  }
 
-.close-button, .source-button {
-  background-color: #28a745; /* Vert */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  .close-button, .source-button {
+    background-color: #28a745; /* Vert */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-.close-button:hover, .source-button:hover {
-  background-color: #218838; /* Vert foncé */
-}
+  .close-button:hover, .source-button:hover {
+    background-color: #218838; /* Vert foncé */
+  }
 
 /* Formulaire de recherche */
 .search-form {

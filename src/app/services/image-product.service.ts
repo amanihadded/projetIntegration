@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ImageProduct } from '../models/ImageProduct.model';
+import { ImageProduct } from '../models/imageProduct.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageProductService {
 
-  private apiUrl = 'http://localhost:8087/api/boycott/imageProduct';
+  private apiUrl = 'http://localhost:8082/api/boycott/imageProduct';
 
   constructor(private http: HttpClient) { }
 
