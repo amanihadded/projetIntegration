@@ -36,4 +36,5 @@ public class Product {
     @JsonIgnore
     @OneToOne(mappedBy = "product",cascade = CascadeType.REMOVE, orphanRemoval = true)
     private ImageProduct imageProduct;
+
 }

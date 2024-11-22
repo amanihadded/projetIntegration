@@ -20,4 +20,6 @@ public class ImageProduct {
     @OneToOne
     @JoinTable(name = "image_product_assotiation")
     private Product product;
+
+
 }
