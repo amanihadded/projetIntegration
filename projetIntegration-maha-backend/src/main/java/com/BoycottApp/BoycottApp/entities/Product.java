@@ -29,11 +29,14 @@ public class Product {
 
     private String alternativeSourceLink;
 
+    private String imgUrl;
+
     @ManyToOne
     @JoinColumn(name = "category_id") // Pour spécifier le nom de la colonne FK
     private Category category;
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "product",cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private ImageProduct imageProduct;
+
+
+
+
 }

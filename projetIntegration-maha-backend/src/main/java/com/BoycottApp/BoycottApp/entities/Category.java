@@ -20,12 +20,10 @@ public class Category {
     private Long id;
     private String name;
     private String description;
+    private String imgUrl;
 
     @OneToMany(mappedBy = "category",cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     private List<Product> products;
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "category",cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private ImageCategory imageCategory;
 }
